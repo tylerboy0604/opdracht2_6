@@ -1,6 +1,9 @@
+let slideIndex = 0;
+
 
 function slideshowSetUp() {
     document.getElementById('slideshow-next').addEventListener('click', slideshowNext);
+    document.getElementById('slideshow-prev').addEventListener('click', slideshowPrev);
 
 }
 
@@ -13,6 +16,20 @@ function slideshowNext() {
 
 
 
-    slides[0].classList.remove('visible');
-    slides[1].classList.add('visible');
+    slides[slideIndex].classList.remove('visible');
+    slideIndex += 1;
+    if(slideIndex >= slides.length) {
+        slideIndex = 0;
+    }
+
+    slides[slideIndex].classList.add('visible');
+}
+
+
+
+
+
+
+function slideshowPrev() {
+
 }
