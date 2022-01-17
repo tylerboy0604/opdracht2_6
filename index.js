@@ -31,5 +31,16 @@ function slideshowNext() {
 
 
 function slideshowPrev() {
+    let slides = document.getElementsByClassName('slide');
+
+
+
+    slides[slideIndex].classList.remove('visible');
+    slideIndex -= 1;
+    if(slideIndex <= 0) {
+        slideIndex = 4;
+    }
+
+    slides[slideIndex].classList.add('visible');
 
 }
